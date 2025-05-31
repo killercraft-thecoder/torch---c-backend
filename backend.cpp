@@ -55,3 +55,30 @@ namespace Torch {
         }
     }
 }
+
+extern "C" {
+    // Matrix multiplication
+    void __matmul(int rowsA, int colsA, int rowsB, int colsB, float* A, float* B, float* result) {
+        Torch::backend::matmul(rowsA, colsA, rowsB, colsB, A, B, result);
+    }
+
+    // Tensor addition
+    void __add(int size, float* A, float* B, float* result) {
+        Torch::backend::add(size, A, B, result);
+    }
+
+    // Tensor subtraction
+    void __sub(int size, float* A, float* B, float* result) {
+        Torch::backend::sub(size, A, B, result);
+    }
+
+    // Element-wise multiplication
+    void __mul(int size, float* A, float* B, float* result) {
+        Torch::backend::mul(size, A, B, result);
+    }
+
+    // Dot product
+    float __dot(int size, float* A, float* B) {
+        return Torch::backend::dot(size, A, B);
+    }
+}
