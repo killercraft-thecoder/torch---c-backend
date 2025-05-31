@@ -1,5 +1,25 @@
+
 namespace Torch.backend {
     
+    //% shim=Torch.backend::__matmul
+    function __matmul(rowsA: number, colsA: number,rowsB: number, colsB: number, A: number[], B: number[]): number[] { return []; }
+
+    //% shim=Torch.backend::__add
+    function __add(size: number, A: number[], B: number[]): number[] { return []; }
+
+    //% shim=Torch.backend::__sub
+    function __sub(size: number, A: number[], B: number[]): number[] { return []; }
+
+    //% shim=Torch.backend::__init_tensor
+    function __init_tensor(rows: number, cols: number): number[] { return []; }
+
+    //% shim=Torch.backend::__mul
+    function __mul(size: number, A: number[], B: number[]): number[] { return []; }
+
+    //% shim=Torch.backend::__dot
+    function __dot(size: number, A: number[], B: number[]): number { return 0; }
+
+
     // Utility function: Convert 2D matrix to 1D array (row-major order)
     function flattenMatrix(matrix: number[][]): number[] {
         let flatArray: number[] = [];
