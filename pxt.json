@@ -7,6 +7,7 @@
     "files": [
         "main.blocks",
         "backend.cpp",
+        "backend.ts",
         "README.md",
         "assets.json"
     ],
